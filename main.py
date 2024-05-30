@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+app = Flask(__name__)
+data = pd.read_csv('final_dataset.csv')
+
 try:
     # Ensure the file path is correct
     data = pd.read_csv("train.csv")
@@ -21,3 +24,9 @@ except pd.errors.ParserError:
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
 
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
