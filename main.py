@@ -5,6 +5,11 @@ import matplotlib.pyplot as plt
 app = Flask(__name__)
 data = pd.read_csv('final_dataset.csv')
 
+def predict():
+    bedrooms = request.form.get('beds')
+    bathrooms = request.form.get('baths')
+    size = request.form.get('size')
+
 try:
     # Ensure the file path is correct
     data = pd.read_csv("train.csv")
